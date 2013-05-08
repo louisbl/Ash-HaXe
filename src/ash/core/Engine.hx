@@ -1,8 +1,7 @@
 package ash.core;
 
 import ash.ObjectMap;
-import ash.signals.Signal0;
-import ash.signals.Signal1;
+import msignal.Signal;
 
 /**
  * The Engine class is the central point for creating and managing your game state. Add

@@ -1,7 +1,7 @@
 package ash.core;
 
 import ash.GenericListIterator;
-import ash.signals.Signal1;
+import msignal.Signal;
 
 /**
  * A collection of nodes.
