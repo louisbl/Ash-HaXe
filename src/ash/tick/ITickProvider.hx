@@ -7,8 +7,8 @@ package ash.tick;
  */
 interface ITickProvider
 {
-    function add(listener:Float->Void):Void;
-    function remove(listener:Float->Void):Void;
+    function add(listener:Int->Void):Void;
+    function remove(listener:Int->Void):Void;
     function start():Void;
     function stop():Void;
     var playing(default, null):Bool;

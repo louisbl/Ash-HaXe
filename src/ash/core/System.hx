@@ -66,7 +66,7 @@ class System
      * @param time The duration, in seconds, of the frame.
      */
 
-    public function update(time:Float):Void
+    public function update(time:Int):Void
     {
     }
 }
