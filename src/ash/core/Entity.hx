@@ -1,7 +1,7 @@
 package ash.core;
 
 import ash.ObjectMap;
-import ash.signals.Signal2;
+import msignal.Signal;
 
 /**
  * An entity is composed from components. As such, it is essentially a collection object for components.

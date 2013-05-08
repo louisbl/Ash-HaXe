@@ -3,7 +3,7 @@ package ash.tick;
 import flash.display.DisplayObject;
 import flash.events.Event;
 
-import ash.signals.Signal1;
+import msignal.Signal;
 
 /**
  * Uses the enter frame event to provide a frame tick with a fixed frame duration. This tick ignores the length of
