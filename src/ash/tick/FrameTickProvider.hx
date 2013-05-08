@@ -14,9 +14,9 @@ import ash.signals.Signal1;
 class FrameTickProvider implements ITickProvider
 {
     private var displayObject:DisplayObject;
-    private var previousTime:Float;
-    private var maximumFrameTime:Float;
-    private var signal:Signal1<Float>;
+    private var previousTime:Int;
+    private var maximumFrameTime:Int;
+    private var signal:Signal1<Int>;
 
     public var playing(default, null):Bool;
 
@@ -26,20 +26,20 @@ class FrameTickProvider implements ITickProvider
      */
     public var timeAdjustment:Float = 1;
 
-    public function new(displayObject:DisplayObject, maximumFrameTime:Float = 9999999999999999.0)
+    public function new(displayObject:DisplayObject, maximumFrameTime:Int = 2147483647)
     {
         playing = false;
-        signal = new Signal1<Float>();
+        signal = new Signal1<Int>();
         this.displayObject = displayObject;
         this.maximumFrameTime = maximumFrameTime;
     }
 
-    public function add(listener:Float->Void):Void
+    public function add(listener:Int->Void):Void
     {
         signal.add(listener);
     }
 
-    public function remove(listener:Float->Void):Void
+    public function remove(listener:Int->Void):Void
     {
         signal.remove(listener);
     }
@@ -59,9 +59,9 @@ class FrameTickProvider implements ITickProvider
 
     private function dispatchTick(event:Event):Void
     {
-        var temp:Float = previousTime;
+        var temp:Int = previousTime;
         previousTime = Lib.getTimer();
-        var frameTime:Float = ( previousTime - temp ) / 1000;
+        var frameTime:Int = previousTime - temp;
         if (frameTime > maximumFrameTime)
             frameTime = maximumFrameTime;
         signal.dispatch(frameTime * timeAdjustment);

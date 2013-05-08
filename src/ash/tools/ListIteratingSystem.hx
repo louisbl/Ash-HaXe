@@ -19,7 +19,7 @@ import ash.core.System;
  *         super(MyNode, updateNode);
  *     }
  *
- *     private function updateNode(node:MyNode, time:Float):Void
+ *     private function updateNode(node:MyNode, time:Int):Void
  *     {
  *         // process the node here
  *     }
@@ -30,11 +30,11 @@ class ListIteratingSystem<TNode:Node<TNode>> extends System
 {
     private var nodeList:NodeList<TNode>;
     private var nodeClass:Class<TNode>;
-    private var nodeUpdateFunction:TNode->Float->Void;
+    private var nodeUpdateFunction:TNode->Int->Void;
     private var nodeAddedFunction:TNode->Void;
     private var nodeRemovedFunction:TNode->Void;
 
-    public function new(nodeClass:Class<TNode>, nodeUpdateFunction:TNode->Float->Void, nodeAddedFunction:TNode->Void = null, nodeRemovedFunction:TNode->Void = null)
+    public function new(nodeClass:Class<TNode>, nodeUpdateFunction:TNode->Int->Void, nodeAddedFunction:TNode->Void = null, nodeRemovedFunction:TNode->Void = null)
     {
         super();
         this.nodeClass = nodeClass;
@@ -71,7 +71,7 @@ class ListIteratingSystem<TNode:Node<TNode>> extends System
         nodeList = null;
     }
 
-    override public function update(time:Float):Void
+    override public function update(time:Int):Void
     {
         if (nodeUpdateFunction != null)
         {

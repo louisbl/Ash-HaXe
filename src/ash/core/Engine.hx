@@ -285,7 +285,7 @@ class Engine
      * @time The duration, in seconds, of this update step.
      */
 
-    public function update(time:Float):Void
+    public function update(time:Int):Void
     {
         updating = true;
         for (system in systemList)
