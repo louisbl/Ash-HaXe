@@ -12,8 +12,8 @@ import ash.signals.Signal1;
 class FixedTickProvider implements ITickProvider
 {
     private var displayObject:DisplayObject;
-    private var frameTime:Float;
-    private var signal:Signal1<Float>;
+    private var frameTime:Int;
+    private var signal:Signal1<Int>;
 
     public var playing(default, null):Bool;
 
@@ -23,20 +23,20 @@ class FixedTickProvider implements ITickProvider
      */
     public var timeAdjustment:Float = 1;
 
-    public function new(displayObject:DisplayObject, frameTime:Float)
+    public function new(displayObject:DisplayObject, frameTime:Int)
     {
         playing = false;
-        signal = new Signal1<Float>();
+        signal = new Signal1<Int>();
         this.displayObject = displayObject;
         this.frameTime = frameTime;
     }
 
-    public function add(listener:Float->Void):Void
+    public function add(listener:Int->Void):Void
     {
         signal.add(listener);
     }
 
-    public function remove(listener:Float->Void):Void
+    public function remove(listener:Int->Void):Void
     {
         signal.remove(listener);
     }
@@ -55,6 +55,6 @@ class FixedTickProvider implements ITickProvider
 
     private function dispatchTick(event:Event):Void
     {
-        signal.dispatch(frameTime * timeAdjustment);
+        signal.dispatch(Std.int(frameTime * timeAdjustment));
     }
 }
