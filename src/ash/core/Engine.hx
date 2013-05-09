@@ -287,8 +287,11 @@ class Engine
     public function update(time:Int):Void
     {
         updating = true;
-        for (system in systemList)
-            system.update(time);
+        for (system in systemList) {
+            if( !system.paused ) {
+                system.update(time);
+            }
+        }
         updating = false;
         updateComplete.dispatch();
     }

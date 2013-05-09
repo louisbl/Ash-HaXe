@@ -28,9 +28,12 @@ class System
      */
     public var priority:Int;
 
+    public var paused:Bool;
+
     public function new()
     {
         priority = 0;
+        paused = false;
     }
 
     /**
