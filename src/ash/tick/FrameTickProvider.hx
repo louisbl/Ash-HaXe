@@ -64,6 +64,6 @@ class FrameTickProvider implements ITickProvider
         var frameTime:Int = previousTime - temp;
         if (frameTime > maximumFrameTime)
             frameTime = maximumFrameTime;
-        signal.dispatch(frameTime * timeAdjustment);
+        signal.dispatch(Std.int(frameTime * timeAdjustment));
     }
 }
