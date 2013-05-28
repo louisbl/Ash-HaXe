@@ -7,5 +7,6 @@
     <classpath name="examples/asteroids" />
 
     <haxelib name="nme"/>
+    <haxelib name="msignal"/>
     <ndll name="nme" haxelib="nme" />
 </project>

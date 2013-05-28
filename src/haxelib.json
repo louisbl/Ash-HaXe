@@ -7,5 +7,5 @@
     "version": "1.5.0",
     "releasenote": "Initial release for new haxelib.",
     "contributors": ["nadako"],
-    "dependencies": {"msignal"}
+    "dependencies": {}
 }
